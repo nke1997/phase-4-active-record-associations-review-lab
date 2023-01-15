@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+20.times { Passenger.create(name: Faker::Name.name) }
+10.times { Taxi.create() }
+80.times { Ride.create(passenger_id: Faker::Number.between(from: 1, to: 20), taxi_id: Faker::Number.between(from: 1, to: 10)) }
